@@ -18,11 +18,11 @@ public class CityController {
     CityService cityService;
 
     @PostMapping("/add-city")
-    public ResponseEntity<Boolean> addCity(@RequestBody CityDto city) {
-        return cityService.addCity(city);
+    public ResponseEntity addCity(@RequestBody CityDto cityDto) {
+        return cityService.addCity(cityDto);
     }
 
-    @GetMapping("/get-all")
+    @GetMapping("/get-all-cities")
     public ResponseEntity<List<CityDto>> getAll() {
         return cityService.getAll();
     }

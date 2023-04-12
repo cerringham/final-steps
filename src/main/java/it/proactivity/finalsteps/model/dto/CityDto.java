@@ -13,5 +13,10 @@ public class CityDto {
 
     private Long id;
     private String cityName;
-    private Integer cityPincode;
+    private Integer cityPinCode;
+
+    public CityDto(String cityName, Integer cityPinCode) {
+        this.cityName = cityName;
+        this.cityPinCode = cityPinCode;
+    }
 }

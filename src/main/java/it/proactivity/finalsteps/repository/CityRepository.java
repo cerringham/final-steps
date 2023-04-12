@@ -12,6 +12,6 @@ import java.util.Optional;
 public interface CityRepository extends JpaRepository<City, Long> {
 
     @Query("SELECT c.id FROM City c ORDER BY id DESC")
-    Optional<Long> findLastInsertedCity();
+    Optional<Long> findLastId();
 
 }

@@ -18,8 +18,8 @@ public class CityController {
     CityService cityService;
 
     @PostMapping("/insert-city")
-    public ResponseEntity insertCity(@RequestBody CityDto city) {
-        return cityService.insertCity(city);
+    public ResponseEntity insertCity(@RequestBody CityDto cityDto) {
+        return cityService.insertCity(cityDto);
     }
 
     @GetMapping("/get-all")

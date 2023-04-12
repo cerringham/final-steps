@@ -26,7 +26,7 @@ public class CityUtility {
     public City createCity(CityDto cityDto) {
 
         //find the last id from database
-        Optional<Long> cityHighestId = cityRepository.findLastInsertedCity();
+        Optional<Long> cityHighestId = cityRepository.findLastId();
 
         if (cityHighestId.isPresent()) {
 

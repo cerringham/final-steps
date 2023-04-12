@@ -23,4 +23,9 @@ public class CityDto {
                 ", cityPinCode=" + cityPinCode +
                 '}';
     }
+
+    public CityDto(String cityName, Integer cityPinCode) {
+        this.cityName = cityName;
+        this.cityPinCode = cityPinCode;
+    }
 }

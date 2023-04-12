@@ -18,4 +18,14 @@ public class ParsingUtility {
             return null;
         }
     }
+
+    public LocalDate parseStringToLocalDate(String birthdate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        try {
+            return LocalDate.parse(birthdate, formatter);
+        } catch (DateTimeParseException e) {
+            return null;
+        }
+    }
 }

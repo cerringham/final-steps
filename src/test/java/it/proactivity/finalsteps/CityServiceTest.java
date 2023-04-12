@@ -1,7 +1,6 @@
 package it.proactivity.finalsteps;
 
 import it.proactivity.finalsteps.model.dto.CityDto;
-import it.proactivity.finalsteps.repository.CityRepository;
 import it.proactivity.finalsteps.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

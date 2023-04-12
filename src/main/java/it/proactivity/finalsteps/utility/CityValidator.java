@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class CityValidator {
 
     private static final Integer CITY_NAME_MAX_LENGTH = 50;
+
     public Boolean validateAllParametersForCityDto(CityDto cityDto) {
         if (cityDto == null) {
             return false;

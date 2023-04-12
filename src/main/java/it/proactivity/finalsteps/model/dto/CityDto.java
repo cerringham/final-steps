@@ -13,5 +13,14 @@ public class CityDto {
 
     private Long id;
     private String cityName;
-    private Integer cityPincode;
+    private Integer cityPinCode;
+
+    @Override
+    public String toString() {
+        return "CityDto{" +
+                "id=" + id +
+                ", cityName='" + cityName + '\'' +
+                ", cityPinCode=" + cityPinCode +
+                '}';
+    }
 }

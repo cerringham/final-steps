@@ -23,11 +23,7 @@ public class City {
     @Column(name = "city_name")
     private String cityName;
 
-    @Column(name = "city_pincode")
-    private Integer cityPincode;
+    @Column(name = "city_pin_code")
+    private Integer cityPinCode;
 
-    public City(String cityName, Integer cityPincode) {
-        this.cityName = cityName;
-        this.cityPincode = cityPincode;
-    }
 }

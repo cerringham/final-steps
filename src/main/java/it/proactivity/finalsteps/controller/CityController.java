@@ -17,9 +17,9 @@ public class CityController {
     @Autowired
     CityService cityService;
 
-    @PostMapping("/add-city")
-    public ResponseEntity<Boolean> addCity(@RequestBody CityDto city) {
-        return cityService.addCity(city);
+    @PostMapping("/insert-city")
+    public ResponseEntity insertCity(@RequestBody CityDto city) {
+        return cityService.insertCity(city);
     }
 
     @GetMapping("/get-all")

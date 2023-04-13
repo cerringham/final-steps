@@ -24,20 +24,13 @@ public class CityService {
 
     public ResponseEntity<List<CityDto>> getAll() {
         List<City> cities = cityRepository.findAll();
-
-        List<CityDto> dtoList = cities.stream()
-                .map(c -> new CityDto(c.getId(), c.getCityName(), c.getCityPinCode()))
-                .toList();
-
+        List<CityDto> dtoList = cityUtility.generateDtoList(cities);
         return ResponseEntity.ok(dtoList);
     }
 
     public ResponseEntity addCity(CityDto cityDto) {
        if (cityUtility.cityDtoIsValid(cityDto)) {
-           City city = CityBuilder.newBuilder(cityUtility.getNextCityId())
-                   .cityName(cityDto.getCityName())
-                   .cityPinCode(cityDto.getCityPinCode())
-                   .build();
+           City city = cityUtility.createCityFromDto(cityDto);
            cityRepository.save(city);
            return ResponseEntity.status(HttpStatus.CREATED).build();
        }

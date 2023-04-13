@@ -25,7 +25,7 @@ public class CityServiceTest {
 
     @Test
     void getNextCityIdTest() {
-        Long newId = cityUtility.getNextCityId();
+        Long newId = cityUtility.getCityId();
         System.out.println(newId);
         assertEquals(1l, newId);
     }
@@ -49,6 +49,21 @@ public class CityServiceTest {
     void addCityAlreadyExistingCityTest() {
         CityDto cityDto = new CityDto("Kanpur", 208001);
         ResponseEntity response = cityService.addCity(cityDto);
+
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+    }
+
+    @Test
+    void addCityWrongNameTest() {
+        CityDto cityDto = new CityDto("208001", 208001 );
+        ResponseEntity response = cityService.addCity(cityDto);
+
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+    }
+
+    @Test
+    void addCityNullTest() {
+        ResponseEntity response = cityService.addCity(null);
 
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     }

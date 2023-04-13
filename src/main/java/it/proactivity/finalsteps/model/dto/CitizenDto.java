@@ -35,4 +35,12 @@ public class CitizenDto {
         this.address = address;
         this.idNumber = idNumber;
     }
+
+    public CitizenDto(Long id, String name, String surname, String address) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+
+    }
 }
